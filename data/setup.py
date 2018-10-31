@@ -1,31 +1,24 @@
-"""Informacoes de caminho
-Arquivo que cria a tela e os diretorios de recursos do jogo"""
-_author_ = "Isabela e Robson"
+__author__ = 'Robson_Marinho && Isabela Oliveira'
 
-import os
-import pygame as pg
-from . import tools
-from . import constants as c
+import os   #centraliza tela com essa classe que é usada em IOS/Android
+import pygame as pg            #importa pygame
+from . import tools          #importa classe tools
+from . import constants as c    #importa a constants
 
-#Cria a tela e os diretorios de recursos
+    ### CRIANDO A TELA E DIRETÓRIOS DE RECURSOS ###
 
-TITLE = c.TITLE
+TITLE = c.TITLE #get Título do jogo
 
-os.environ["SDL_VIDEO_CENTERED"] = "1"
-pg.init()
+os.environ['SDL_VIDEO_CENTERED'] = '1'   #Centraliza a tela
+pg.init()    #inicializa
 
+#Eventos de abaixar, parar, e sair
 pg.event.set_allowed([pg.KEYDOWN, pg.KEYUP, pg.QUIT])
 pg.display.set_caption(c.TITLE)
 SCREEN = pg.display.set_mode(c.SCREEN_SIZE)
-SCREEN_RECT = SCREEN.get_rect()
+SCREEN_RECT = SCREEN.get_rect() #Recebe área retangular
 
-
-#Variavel constante
-FONTS = ''
-#Variavel para as musicas do jogo
-MUSIC = ''
-#Variavel para as imagens e graficos do jogo
-GFX = ''
-#Variavel para os sons
-SFX = ''
-
+FONTS = tools.load_all_fonts(os.path.join("resources", "fonts"))  #Variável constante
+MUSIC = tools.load_all_music(os.path.join("resources", "music"))  #Variável de musicas
+GFX = tools.load_all_gfx(os.path.join("resources", "graphics"))    #Variável de imagens/gráfico
+SFX = tools.load_all_sfx(os.path.join("resources", "sound"))   #Variável de som

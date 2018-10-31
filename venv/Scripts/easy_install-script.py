@@ -1,4 +1,4 @@
-#!"C:\Jogo Mario\venv\Scripts\python.exe"
+#!"C:\Users\Robson Marinho\PycharmProjects\jogo-mario-bros\venv\Scripts\python.exe"
 # EASY-INSTALL-ENTRY-SCRIPT: 'setuptools==39.1.0','console_scripts','easy_install'
 __requires__ = 'setuptools==39.1.0'
 import re
